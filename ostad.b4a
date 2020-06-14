@@ -1,0 +1,121 @@
+﻿Version=6.8
+NumberOfModules=6
+Module1=moghaddame
+Module2=university
+Module3=teacher
+Module4=chartdarsi
+Module5=xcv
+Module6=Starter
+Build1=Default,b4a.example
+ManifestCode='This code will be applied to the manifest file during compilation.~\n~'You do not need to modify it in most cases.~\n~'See this link for for more information: https://www.b4x.com/forum/showthread.php?p=78136~\n~AddManifestText(~\n~<uses-sdk android:minSdkVersion="5" android:targetSdkVersion="19"/>~\n~<supports-screens android:largeScreens="true" ~\n~    android:normalScreens="true" ~\n~    android:smallScreens="true" ~\n~    android:anyDensity="true"/>)~\n~SetApplicationAttribute(android:icon, "@drawable/icon")~\n~SetApplicationAttribute(android:label, "$LABEL$")~\n~'End of default text.~\n~
+IconFile=
+NumberOfFiles=38
+File1=15.jpg
+File2=ab0.png
+File3=ab1.png
+File4=ab2.png
+File5=ab3.png
+File6=ab4.png
+File7=ab5.png
+File8=ab6.png
+File9=Apple-September-7-event-wallpaper-ar7-ipad-1024x1024.png
+File10=back.png
+File11=biomed.png
+File12=bnazanin.ttf
+File13=bnaznnbd.ttf
+File14=chart.png
+File15=database.db
+File16=exitbtn.png
+File17=im0.png
+File18=im1.png
+File19=im2.png
+File20=im3.png
+File21=im4.png
+File22=im5.png
+File23=im6.png
+File24=imp0.png
+File25=imp1.png
+File26=imp2.png
+File27=imp3.png
+File28=imp4.png
+File29=info.png
+File30=l_chart.bal
+File31=l_main.bal
+File32=l_moghaddame.bal
+File33=l_teachers.bal
+File34=loader.bal
+File35=samsung-galaxy-polyart-blue-purple-pattern-9-wallpaper-1024x1024.jpg
+File36=soaalat.txt
+File37=teachers.png
+File38=uni.png
+NumberOfLibraries=3
+Library1=core
+Library2=stringutils
+Library3=sql
+@EndOfDesignText@
+#Region  Project Attributes 
+	#ApplicationLabel: ostad
+	#VersionCode: 1
+	#VersionName: 
+	'SupportedOrientations possible values: unspecified, landscape or portrait.
+	#SupportedOrientations: portrait
+	#CanInstallToExternalStorage: False
+#End Region
+
+#Region  Activity Attributes 
+	#FullScreen: true
+	#IncludeTitle: false
+#End Region
+
+Sub Process_Globals
+	
+End Sub
+
+Sub Globals
+
+End Sub
+
+Sub Activity_Create(FirstTime As Boolean)
+	
+	Activity.LoadLayout("l_main")
+
+End Sub
+
+Sub Activity_Resume
+End Sub
+
+Sub Activity_Pause (UserClosed As Boolean)
+
+End Sub
+
+Sub exitbtn_Click
+	Dim a As Int
+	a = Msgbox2 ("آیا قصد خروج از برنامه را دارید ؟","خروج","بله","","نه",Null)
+	If a = DialogResponse.POSITIVE Then
+		ExitApplication
+		Return False
+	Else If a = DialogResponse.NEGATIVE Then
+		Return True
+	End If
+End Sub
+
+Sub info_Click
+	'Msgbox("رضــا امـیـنـی","طراحی و برنامه نویسی ")
+	Msgbox (File.ReadString(File.DirAssets, "Soaalat.txt"),"سوالات متداول")
+End Sub
+
+Sub biomed_Click
+	StartActivity(moghaddame)
+End Sub
+
+Sub uni_Click
+	StartActivity(university)
+End Sub
+
+Sub teachers_Click
+	StartActivity(teacher)
+End Sub
+
+Sub chart_Click
+	StartActivity(chartdarsi)
+End Sub
